@@ -30,14 +30,14 @@ public class MainActivity extends Activity {
 			// Loading map
 			initilizeMap();
 
-			// Changing map type
+			// Changing map type (other map types current I have set it to normal)
 			googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-			// googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+			// googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID); 
 			// googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 			// googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
 			// googleMap.setMapType(GoogleMap.MAP_TYPE_NONE);
 
-			// Showing / hiding your current location
+			// Showing / hiding current location
 			googleMap.setMyLocationEnabled(true);
 
 			// Enable / Disable zooming controls
@@ -55,13 +55,13 @@ public class MainActivity extends Activity {
 			// Enable / Disable zooming functionality
 			googleMap.getUiSettings().setZoomGesturesEnabled(true);
 
-			double latitude = 26.935588;
-			double longitude = 75.921596;
+			double latitude = 26.935588;		//latitude of LNMIIT Jaipur
+			double longitude = 75.921596;		//longitude of LNMIIT Jaipur	
 			MarkerOptions marker = new MarkerOptions().position(
-					new LatLng(latitude, longitude)).title("Hello Maps ");
+					new LatLng(latitude, longitude)).title("Hello Maps "); //setting marker at a given lat long.
 
 			marker.icon(BitmapDescriptorFactory
-					.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+					.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)); //setting color of marker a green/
 			googleMap.addMarker(marker);
 
 			CameraPosition cameraPosition = new CameraPosition.Builder()
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
 
 			googleMap.animateCamera(CameraUpdateFactory
 					.newCameraPosition(cameraPosition));
-			// LatLng position = new LatLng(latitude, longitude);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
